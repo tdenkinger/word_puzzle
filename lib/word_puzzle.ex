@@ -1,0 +1,2 @@
+defmodule WordPuzzle do
+end
