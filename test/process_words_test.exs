@@ -1,5 +1,3 @@
-import ProcessWords
-
 defmodule ProcessWordsTest do
   use ExUnit.Case
   doctest ProcessWords
@@ -8,7 +6,7 @@ defmodule ProcessWordsTest do
     word_length = 5
     word_list = ["a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "bbbbb", "ccccccc"]
 
-    candidate_words = select_candidate_words(word_list, word_length)
+    candidate_words = ProcessWords.select_candidate_words(word_list, word_length)
     assert Enum.member?(candidate_words, "aaaaa")
     assert Enum.member?(candidate_words, "bbbbb")
     refute Enum.member?(candidate_words, "ccccccc")

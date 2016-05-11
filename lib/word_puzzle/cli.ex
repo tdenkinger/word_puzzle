@@ -1,6 +1,3 @@
-import FileAccess, only: [read_word_list: 1]
-import ProcessWords, only: [select_candidate_words: 2]
-
 defmodule WordPuzzle.Cli do
   @default_word_length 5
   @default_word_list "/usr/share/dict/words"
@@ -13,8 +10,8 @@ defmodule WordPuzzle.Cli do
     args = parse_args(argv)
 
     elem(args, 1)
-    |> read_word_list
-    |> select_candidate_words(elem(args, 0))
+    |> FileAccess.read_word_list
+    |> ProcessWords.select_candidate_words(elem(args, 0))
     |> ScoreWords.run
     # |> evaluate scores
     # |> print words
