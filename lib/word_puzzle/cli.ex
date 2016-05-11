@@ -14,8 +14,7 @@ defmodule WordPuzzle.Cli do
     |> ProcessWords.select_candidate_words(elem(args, 0))
     |> ScoreWords.run
     |> EvaluateScores.run
-    # |> print words
-    |> IO.inspect
+    |> print_matches
   end
 
   def parse_args(argv \\ []) do
@@ -27,5 +26,9 @@ defmodule WordPuzzle.Cli do
       {_, [arg1, arg2], _}                -> {arg1, arg2}
       _                                   -> {@default_word_length, @default_word_list}
     end
+  end
+
+  defp print_matches(words) do
+    Enum.each words, fn(x) -> IO.puts elem(x, 2) end
   end
 end
