@@ -6,7 +6,7 @@ defmodule WordPuzzle.Cli do
   The entry point for solving the word puzzle.
   """
 
-  def run(argv) do
+  def run(argv \\ []) do
     parse_args(argv)
     |> IO.inspect
   end
