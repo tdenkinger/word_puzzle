@@ -1,13 +1,18 @@
+import FileAccess, only: [read_word_list: 1]
+
 defmodule WordPuzzle.Cli do
   @default_word_length 5
-  @default_word_list "/usr/shared/dict/words"
+  @default_word_list "/usr/share/dict/words"
 
   @moduledoc """
   The entry point for solving the word puzzle.
   """
 
   def run(argv \\ []) do
-    parse_args(argv)
+    args = parse_args(argv)
+
+    elem(args, 1)
+    |> read_word_list
     |> IO.inspect
   end
 
