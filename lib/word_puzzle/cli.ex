@@ -13,7 +13,7 @@ defmodule WordPuzzle.Cli do
     |> FileAccess.read_word_list
     |> ProcessWords.select_candidate_words(elem(args, 0))
     |> ScoreWords.run
-    # |> evaluate scores
+    |> EvaluateScores.run
     # |> print words
     |> IO.inspect
   end
