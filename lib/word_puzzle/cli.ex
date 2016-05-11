@@ -15,6 +15,9 @@ defmodule WordPuzzle.Cli do
     elem(args, 1)
     |> read_word_list
     |> select_candidate_words(elem(args, 0))
+    |> ScoreWords.run
+    # |> evaluate scores
+    # |> print words
     |> IO.inspect
   end
 
