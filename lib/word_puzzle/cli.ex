@@ -1,4 +1,5 @@
 import FileAccess, only: [read_word_list: 1]
+import ProcessWords, only: [select_candidate_words: 2]
 
 defmodule WordPuzzle.Cli do
   @default_word_length 5
@@ -13,6 +14,7 @@ defmodule WordPuzzle.Cli do
 
     elem(args, 1)
     |> read_word_list
+    |> select_candidate_words(elem(args, 0))
     |> IO.inspect
   end
 
