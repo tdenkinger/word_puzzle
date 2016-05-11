@@ -3,8 +3,9 @@ defmodule ScoreWordsTest do
   doctest ScoreWords
 
   test "calculates each word's target value and score" do
-    score = ScoreWords.run(["aa", "zaaa"])
+    score = ScoreWords.run(["aa", "zaaa", "aB"])
     assert Enum.member?(score, {1, 1, "aa"})
+    assert Enum.member?(score, {1, 2, "aB"})
     assert Enum.member?(score, {26, 3, "zaaa"})
   end
 end
