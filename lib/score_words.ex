@@ -2,7 +2,7 @@ defmodule ScoreWords do
   def run(words) do
     words
     |> Enum.map(&Task.async(fn -> process_word(&1) end))
-    |> Enum.map(&Task.await/1)
+    |> Enum.map(&Task.await(&1, 180_000))
   end
 
   defp process_word(word) do
