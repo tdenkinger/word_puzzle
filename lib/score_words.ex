@@ -6,7 +6,7 @@ defmodule ScoreWords do
   end
 
   defp process_word(word) do
-    Fib.fib(35)
+    Process.sleep(1)
 
     target_letter_value = word
     |> String.slice(0, 1)
@@ -33,10 +33,4 @@ defmodule ScoreWords do
        s: 19, t: 20, u: 21, v: 22, w: 23, x: 24,
        y: 25, z: 26} [letter |> String.downcase |> String.to_atom]
   end
-end
-
-defmodule Fib do
-  def fib(0) do 0 end
-  def fib(1) do 1 end
-  def fib(n) do fib(n-1) + fib(n-2) end
 end
