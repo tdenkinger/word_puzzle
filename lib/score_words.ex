@@ -1,8 +1,7 @@
 defmodule ScoreWords do
   def run(words) do
-    Enum.reduce words, [], fn(word, matches) ->
-      [process_word(word) | matches]
-    end
+    words
+    |> Enum.map(fn(word) -> process_word(word) end)
   end
 
   defp process_word(word) do
