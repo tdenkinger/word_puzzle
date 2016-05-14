@@ -5,7 +5,7 @@ defmodule ScoreWords do
   end
 
   defp process_word(word) do
-    Fib.fib(25)
+    Fib.fib(30)
 
     target_letter_value = word
     |> String.slice(0, 1)
