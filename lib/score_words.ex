@@ -5,6 +5,7 @@ defmodule ScoreWords do
   end
 
   defp process_word(word) do
+    Process.sleep(1)
     target_letter_value = word
     |> String.slice(0, 1)
     |> get_position_value
