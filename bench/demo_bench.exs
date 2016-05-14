@@ -1,10 +1,7 @@
 defmodule DemoBench do
   use Benchfella
 
-  @list Enum.to_list(1..1000)
-
-  bench "hello demo" do
-    Enum.reverse @list
-    Process.sleep(2000)
+  bench "Word Puzzle demo" do
+    WordPuzzle.Cli.run()
   end
 end
